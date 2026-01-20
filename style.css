@@ -216,8 +216,9 @@ body {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 2rem;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    gap: 2rem;
     align-items: center;
 }
 
@@ -230,6 +231,97 @@ body {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     z-index: 1001;
+}
+
+/* Coordonnées dans le header */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    align-items: flex-end;
+    justify-self: end;
+}
+
+.contact-info a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: var(--radius-sm);
+    transition: all 0.3s var(--transition-premium);
+    position: relative;
+}
+
+.contact-info a::after {
+    content: attr(data-copy);
+    position: absolute;
+    top: -2.5rem;
+    right: 0;
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.75rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s var(--transition-premium);
+}
+
+.contact-info a:hover::after {
+    opacity: 1;
+}
+
+.contact-info a::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 0.85rem;
+    color: var(--accent-glow);
+}
+
+.contact-info a[href^="tel"]::before {
+    content: "\f095"; /* Icône téléphone */
+}
+
+.contact-info a[href^="mailto"]::before {
+    content: "\f0e0"; /* Icône email */
+}
+
+.contact-info a:hover {
+    color: var(--accent-glow);
+    background: var(--glass-surface);
+    transform: translateX(-3px);
+}
+
+.contact-info a:active {
+    transform: scale(0.95);
+}
+
+/* Notification de copie */
+.copy-notification {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: var(--gradient-aurora);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--radius-lg);
+    font-weight: 600;
+    box-shadow: var(--shadow-glow);
+    z-index: 9999;
+    opacity: 0;
+    transition: all 0.4s var(--transition-premium);
+    pointer-events: none;
+}
+
+.copy-notification.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
 }
 
 /* Navigation desktop */
@@ -836,6 +928,106 @@ table {
     margin-top: 0.5rem;
 }
 
+/* Coordonnées en bas de page */
+.coordonees {
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--glass-border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.coordonees p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.coordonees p::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: var(--accent-glow);
+    font-size: 0.9rem;
+}
+
+.coordonees p:first-child::before {
+    content: "\f3c5"; /* Icône map-marker-alt */
+}
+
+.coordonees p:nth-child(2)::before {
+    content: "\f015"; /* Icône home */
+}
+
+.coordonees a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--glass-border);
+    background: var(--glass-surface);
+    transition: all 0.3s var(--transition-premium);
+    cursor: pointer;
+    position: relative;
+}
+
+.coordonees a::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: var(--accent-glow);
+    font-size: 1rem;
+}
+
+.coordonees a[href^="tel"]::before {
+    content: "\f095"; /* Icône téléphone */
+}
+
+.coordonees a[href^="mailto"]::before {
+    content: "\f0e0"; /* Icône email */
+}
+
+.coordonees a:hover {
+    color: var(--accent-glow);
+    background: var(--glass-highlight);
+    border-color: var(--accent-glow);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(56, 189, 248, 0.2);
+}
+
+.coordonees a:active {
+    transform: translateY(0) scale(0.98);
+}
+
+.coordonees a::after {
+    content: "Cliquer pour copier";
+    position: absolute;
+    top: -2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.75rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s var(--transition-premium);
+}
+
+.coordonees a:hover::after {
+    opacity: 1;
+}
+
 /* ============================================
    FOOTER
    ============================================ */
@@ -922,6 +1114,20 @@ table {
     .qualities-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+    
+    /* Coordonnées - tablette */
+    .contact-info {
+        gap: 0.2rem;
+    }
+    
+    .contact-info a {
+        font-size: 0.85rem;
+        padding: 0.25rem 0.6rem;
+    }
+    
+    .coordonees a {
+        font-size: 0.95rem;
+    }
 }
 
 /* MOBILE (max 768px) */
@@ -943,10 +1149,23 @@ table {
     .container-header {
         padding: 0 1rem;
         width: 100%;
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
     }
     
     .logo {
         font-size: 1.2rem;
+    }
+    
+    /* Coordonnées dans le header - mobile */
+    .contact-info {
+        display: none;
+    }
+    
+    /* Réorganiser l'ordre sur mobile : logo puis hamburger */
+    .hamburger {
+        order: 2;
     }
     
     /* Afficher le bouton hamburger sur mobile */
@@ -1272,6 +1491,32 @@ table {
     
     .signature-name {
         font-size: 1.3rem;
+    }
+    
+    /* Coordonnées en bas - mobile */
+    .coordonees {
+        gap: 0.6rem;
+        padding: 1.5rem 0.5rem;
+        margin-top: 2rem;
+    }
+    
+    .coordonees p {
+        font-size: 0.9rem;
+        text-align: center;
+    }
+    
+    .coordonees a {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+    }
+    
+    /* Masquer les tooltips sur mobile (pas de hover tactile) */
+    .coordonees a::after,
+    .contact-info a::after {
+        display: none;
     }
     
     /* ===== FOOTER ===== */

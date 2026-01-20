@@ -334,6 +334,90 @@ if (hamburger && navMenu && menuOverlay) {
 
 
 // ============================================
+// FONCTION COPIE DES COORDONNÉES
+// ============================================
+
+// Fonction pour copier le texte dans le presse-papiers
+function copyToClipboard(text) {
+    // Méthode moderne avec l'API Clipboard
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => {
+            showCopyNotification(text);
+        }).catch(err => {
+            // Fallback si l'API moderne ne fonctionne pas
+            fallbackCopyToClipboard(text);
+        });
+    } else {
+        // Fallback pour navigateurs plus anciens
+        fallbackCopyToClipboard(text);
+    }
+}
+
+// Méthode de secours pour copier le texte
+function fallbackCopyToClipboard(text) {
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    textArea.style.position = 'fixed';
+    textArea.style.left = '-9999px';
+    document.body.appendChild(textArea);
+    textArea.select();
+    
+    try {
+        document.execCommand('copy');
+        showCopyNotification(text);
+    } catch (err) {
+        console.error('Erreur lors de la copie:', err);
+    }
+    
+    document.body.removeChild(textArea);
+}
+
+// Afficher la notification de copie
+function showCopyNotification(text) {
+    // Créer ou récupérer l'élément de notification
+    let notification = document.querySelector('.copy-notification');
+    
+    if (!notification) {
+        notification = document.createElement('div');
+        notification.className = 'copy-notification';
+        document.body.appendChild(notification);
+    }
+    
+    // Définir le texte de la notification
+    notification.textContent = `✓ Copié : ${text}`;
+    
+    // Afficher la notification
+    setTimeout(() => {
+        notification.classList.add('show');
+    }, 10);
+    
+    // Masquer la notification après 3 secondes
+    setTimeout(() => {
+        notification.classList.remove('show');
+    }, 3000);
+}
+
+// Initialiser la fonction de copie sur tous les éléments .copyable
+function initCopyableElements() {
+    const copyableElements = document.querySelectorAll('.copyable');
+    
+    copyableElements.forEach(element => {
+        element.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            // Récupérer le texte à copier depuis data-copy ou le contenu de l'élément
+            const textToCopy = element.getAttribute('data-copy') || element.textContent.trim();
+            
+            copyToClipboard(textToCopy);
+        });
+        
+        // Ajouter un curseur pointer pour indiquer que c'est cliquable
+        element.style.cursor = 'pointer';
+    });
+}
+
+
+// ============================================
 // INITIALISATION AU CHARGEMENT
 // ============================================
 
@@ -349,6 +433,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Mettre en surbrillance la première section active
     highlightActiveSection();
+    
+    // Initialiser les éléments copiables
+    initCopyableElements();
 });
 
 
