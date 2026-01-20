@@ -155,6 +155,42 @@ Effets visuels inspirés du projet **Portfolio_Informatique** avec :
 - Effets glassmorphism
 - Animations de révélation
 
+## 🚀 Déploiement sur Vercel
+
+### Étapes de Déploiement
+
+1. **Importer le projet depuis GitHub**
+   - Aller sur [vercel.com](https://vercel.com)
+   - Cliquer sur "New Project"
+   - Importer le repository `Eloura74/Spicf_Quentin_Faber`
+
+2. **Configuration du projet**
+   - **Framework Preset** : `Other` (laisser par défaut)
+   - **Build Command** : Laisser **vide**
+   - **Output Directory** : `./`
+   - **Install Command** : Laisser **vide**
+
+3. **Déployer**
+   - Cliquer sur "Deploy"
+   - Vercel détectera automatiquement le site statique
+
+### Fichiers de Configuration
+
+- `vercel.json` : Configuration des headers et redirections
+- `.vercelignore` : Fichiers exclus du déploiement
+
+### URL de Production
+
+Une fois déployé, votre site sera accessible à :
+```
+https://spicf-quentin-faber.vercel.app
+```
+(ou un nom similaire généré par Vercel)
+
+### Mises à Jour Automatiques
+
+Chaque `git push` sur la branche `main` déclenchera automatiquement un nouveau déploiement.
+
 ## 📄 Licence
 
 Document personnel - Quentin Faber © 2025
