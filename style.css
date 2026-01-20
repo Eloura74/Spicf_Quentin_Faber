@@ -386,6 +386,8 @@ table {
    ============================================ */
 .section {
     margin-bottom: 8rem;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 .section-title {
@@ -780,14 +782,20 @@ table {
    ============================================ */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     margin-top: 3rem;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 .skill-card {
     padding: 2.5rem;
     text-align: center;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
 .skill-icon {
@@ -813,11 +821,16 @@ table {
     font-weight: 700;
     margin-bottom: 1.5rem;
     color: var(--text-primary);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
 }
 
 .skill-list {
     list-style: none;
     text-align: left;
+    width: 100%;
+    max-width: 100%;
 }
 
 .skill-list li {
@@ -825,6 +838,9 @@ table {
     padding: 0.5rem 0;
     padding-left: 1.5rem;
     position: relative;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
 }
 
 .skill-list li::before {
@@ -1537,11 +1553,16 @@ table {
         grid-template-columns: 1fr;
         gap: 1rem;
         width: 100%;
+        overflow-x: hidden;
+        padding: 0;
     }
     
     .skill-card {
         padding: 1.5rem 1rem;
         width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+        box-sizing: border-box;
     }
     
     .skill-icon {
@@ -1558,10 +1579,22 @@ table {
         font-size: 1.1rem;
         margin-bottom: 1rem;
         word-break: break-word;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        max-width: 100%;
+    }
+    
+    .skill-list {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
     }
     
     .skill-list li {
         font-size: 0.85rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        max-width: 100%;
     }
     
     /* ===== PROJETS ===== */
