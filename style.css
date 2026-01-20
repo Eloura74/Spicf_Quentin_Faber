@@ -81,6 +81,7 @@ h1, h2, h3, h4, h5, h6 {
 html {
     font-size: 16px;
     scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;  /* Scroll fluide iOS/Android */
 }
 
 body {
@@ -479,6 +480,7 @@ table {
     backdrop-filter: blur(20px);
     padding: 2rem;
     transition: all 0.4s var(--transition-premium);
+    touch-action: pan-y;  /* Force le scroll vertical sur les cartes Android */
 }
 
 .glass-card:hover {
@@ -807,6 +809,9 @@ table {
     max-width: 100%;
     box-sizing: border-box;
     min-width: 0;
+    touch-action: pan-y;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 .skill-icon {
@@ -881,6 +886,9 @@ table {
     max-width: 100%;
     box-sizing: border-box;
     min-width: 0;
+    touch-action: pan-y;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 .project-header {
@@ -1588,6 +1596,9 @@ table {
         max-width: 100%;
         box-sizing: border-box;
         min-width: 0;
+        touch-action: pan-y !important;
+        -webkit-user-select: none;
+        user-select: none;
     }
     
     .skill-icon {
@@ -1636,6 +1647,9 @@ table {
         max-width: 100%;
         box-sizing: border-box;
         min-width: 0;
+        touch-action: pan-y !important;
+        -webkit-user-select: none;
+        user-select: none;
     }
     
     .project-header {
