@@ -387,7 +387,6 @@ table {
 .section {
     margin-bottom: 8rem;
     width: 100%;
-    overflow-x: hidden;
 }
 
 .section-title {
@@ -665,7 +664,7 @@ table {
    ============================================ */
 .formation-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
     gap: 2rem;
     margin-top: 2rem;
 }
@@ -782,11 +781,10 @@ table {
    ============================================ */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
     gap: 2rem;
     margin-top: 3rem;
     width: 100%;
-    overflow-x: hidden;
 }
 
 .skill-card {
@@ -794,7 +792,6 @@ table {
     text-align: center;
     width: 100%;
     max-width: 100%;
-    overflow: hidden;
     box-sizing: border-box;
 }
 
@@ -856,7 +853,7 @@ table {
    ============================================ */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
     gap: 2rem;
     margin-bottom: 3rem;
 }
@@ -1383,7 +1380,6 @@ table {
     .section {
         margin-bottom: 3rem;
         width: 100%;
-        overflow-x: hidden;
     }
     
     /* ===== HERO SECTION ===== */
@@ -1553,7 +1549,6 @@ table {
         grid-template-columns: 1fr;
         gap: 1rem;
         width: 100%;
-        overflow-x: hidden;
         padding: 0;
     }
     
@@ -1561,7 +1556,6 @@ table {
         padding: 1.5rem 1rem;
         width: 100%;
         max-width: 100%;
-        overflow: hidden;
         box-sizing: border-box;
     }
     
