@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quentin Faber - Installateur Matériel Multimédia</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles personnalisés -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Effets d'arrière-plan -->
+    <div class="ambient-bg"></div>
+    <div class="noise"></div>
+    <canvas id="constellation"></canvas>
+    
+    <!-- Overlay pour menu mobile -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <!-- Header avec navigation -->
+    <header class="header">
+        <div class="container-header">
+            <h1 class="logo">Quentin Faber</h1>
+            
+            <!-- Bouton hamburger pour mobile -->
+            <button class="hamburger" id="hamburger" aria-label="Menu de navigation">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            
+            <!-- Menu de navigation -->
+            <nav class="nav-menu" id="navMenu">
+                <a href="#presentation" class="nav-link">Présentation</a>
+                <a href="#parcours" class="nav-link">Parcours</a>
+                <a href="#competences" class="nav-link">Compétences</a>
+                <a href="#projets" class="nav-link">Projets personnels</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Container principal -->
+    <div class="container">
+        
+        <!-- Section Hero - Introduction -->
+        <section id="presentation" class="section hero-section">
+            <div class="hero-content reveal">
+                <div class="hero-tag">
+                    <i class="fas fa-bolt"></i>
+                    Candidature - Installateur Matériel Multimédia
+                </div>
+                <h2 class="hero-title">
+                    Quentin <span class="gradient-text">Faber</span>
+                </h2>
+                <p class="hero-subtitle">
+                    Professionnel de l'électricité et du multimédia avec une expertise complète en installation, maintenance et dépannage
+                </p>
+                <div class="hero-intro glass-card">
+                    <p>
+                        Madame, Monsieur,<br><br>
+                        Afin de vous permettre de disposer d'une vision claire et précise de mon profil, 
+                        je vous propose ci-dessous une présentation structurée de mon parcours professionnel, 
+                        de mes compétences techniques et de mes expériences complémentaires, en lien direct avec 
+                        le poste d'installateur de matériel multimédia.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Parcours Professionnel -->
+        <section id="parcours" class="section">
+            <h2 class="section-title reveal">Parcours Professionnel</h2>
+            
+            <!-- Formation -->
+            <div class="subsection reveal">
+                <h3 class="subsection-title">
+                    <i class="fas fa-graduation-cap"></i>
+                    Formation
+                </h3>
+                <div class="formation-grid">
+                    <div class="formation-card glass-card">
+                        <div class="formation-header">
+                            <i class="fas fa-microchip formation-icon"></i>
+                            <h4>Bac STI2D – Génie électronique</h4>
+                        </div>
+                        <p>Formation orientée électronique, systèmes et conception de circuits imprimés.</p>
+                    </div>
+                    
+                    <div class="formation-card glass-card">
+                        <div class="formation-header">
+                            <i class="fas fa-code formation-icon"></i>
+                            <h4>Titre professionnel DWWM</h4>
+                        </div>
+                        <p>
+                            <strong>Développement Web et Web Mobile (niveau 5)</strong><br>
+                            AFPA Marseille (2024–2025)<br>
+                            Reconversion vers les métiers du numérique, avec une forte orientation technique et logique système.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Expériences professionnelles -->
+            <div class="subsection reveal">
+                <h3 class="subsection-title">
+                    <i class="fas fa-briefcase"></i>
+                    Expériences Professionnelles
+                </h3>
+                
+                <div class="timeline">
+                    <!-- Électricien -->
+                    <div class="timeline-item glass-card">
+                        <div class="timeline-icon">
+                            <i class="fas fa-plug"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h4>Électricien – salarié puis indépendant</h4>
+                            <div class="timeline-subtitle">CDI puis auto-entrepreneur</div>
+                            <ul class="timeline-list">
+                                <li>Réalisation d'installations électriques en bâtiment</li>
+                                <li>Courants forts et courants faibles</li>
+                                <li>Tableaux électriques, prises, éclairage</li>
+                                <li>Tirage de câbles, chemins de câbles, raccordements</li>
+                                <li>Lecture et interprétation de plans et schémas</li>
+                                <li>Diagnostic et dépannage des installations électriques</li>
+                                <li>Gestion du matériel et de l'outillage sur chantier</li>
+                                <li>Relation client et suivi des interventions</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Activité événementielle -->
+                    <div class="timeline-item glass-card">
+                        <div class="timeline-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h4>Activité événementielle</h4>
+                            <div class="timeline-subtitle">Activité à compte propre (en parallèle de l'électricité)</div>
+                            <p>Installation et exploitation de matériel événementiel :</p>
+                            <ul class="timeline-list">
+                                <li>Sonorisation</li>
+                                <li>Éclairage</li>
+                                <li>Jeux de lumière</li>
+                                <li>Télévisions, écrans, vidéoprojecteurs</li>
+                                <li>Mise en place rapide de configurations multimédias fonctionnelles</li>
+                                <li>Travail sous contraintes de délais et d'exigence de fiabilité du matériel</li>
+                                <li>Interventions techniques en conditions réelles d'exploitation</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Agent de maintenance -->
+                    <div class="timeline-item glass-card">
+                        <div class="timeline-icon">
+                            <i class="fas fa-wrench"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h4>Agent de maintenance – EDF/GDF</h4>
+                            <ul class="timeline-list">
+                                <li>Maintenance de premier niveau</li>
+                                <li>Diagnostic et dépannage d'équipements</li>
+                                <li>Entretien préventif et correctif des installations</li>
+                                <li>Respect strict des procédures de sécurité</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Militaire -->
+                    <div class="timeline-item glass-card">
+                        <div class="timeline-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h4>Militaire – Armée de Terre</h4>
+                            <div class="timeline-subtitle">Engagement sur plusieurs années</div>
+                            <ul class="timeline-list">
+                                <li>Responsabilités en environnement exigeant</li>
+                                <li>Gestion d'équipes et travail collaboratif</li>
+                                <li>Rigueur opérationnelle, respect des procédures et des consignes</li>
+                                <li>Capacité à intervenir efficacement sous contrainte</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Compétences techniques -->
+        <section id="competences" class="section">
+            <h2 class="section-title reveal">Compétences Techniques</h2>
+            <p class="section-intro reveal">En lien direct avec le poste d'installateur de matériel multimédia</p>
+            
+            <div class="skills-grid">
+                <!-- Installation et intégration -->
+                <div class="skill-card glass-card reveal">
+                    <div class="skill-icon">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h3>Installation et intégration de matériel</h3>
+                    <ul class="skill-list">
+                        <li>Installation de matériel informatique et multimédia</li>
+                        <li>Mise en place d'écrans, télévisions et équipements connectés</li>
+                        <li>Compréhension des contraintes d'usage (salles, utilisateurs, exploitation)</li>
+                    </ul>
+                </div>
+
+                <!-- Câblage et réseaux -->
+                <div class="skill-card glass-card reveal">
+                    <div class="skill-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>Câblage et réseaux</h3>
+                    <ul class="skill-list">
+                        <li>Câblage structuré</li>
+                        <li>Courants faibles</li>
+                        <li>Téléphonie IP</li>
+                        <li>Intégration d'équipements réseau</li>
+                    </ul>
+                </div>
+
+                <!-- Maintenance et dépannage -->
+                <div class="skill-card glass-card reveal">
+                    <div class="skill-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Maintenance et dépannage</h3>
+                    <ul class="skill-list">
+                        <li>Diagnostic de pannes matérielles</li>
+                        <li>Interventions correctives sur équipements</li>
+                        <li>Approche méthodique orientée résolution durable</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Projets personnels -->
+        <section id="projets" class="section">
+            <h2 class="section-title reveal">Projets Personnels et Environnement Technique</h2>
+            <p class="section-intro reveal">
+                En parallèle de mon parcours professionnel, je développe et maintiens à titre personnel 
+                un environnement technique complet, proche d'un petit site professionnel.
+            </p>
+            
+            <div class="projects-grid">
+                <!-- Bureau technique -->
+                <div class="project-card glass-card reveal">
+                    <div class="project-header">
+                        <i class="fas fa-desktop project-icon"></i>
+                        <h3>Bureau technique</h3>
+                    </div>
+                    <ul class="project-list">
+                        <li>Poste multi-écrans</li>
+                        <li>Serveur NAS</li>
+                        <li>Réseau local structuré</li>
+                    </ul>
+                </div>
+
+                <!-- Domotique -->
+                <div class="project-card glass-card reveal">
+                    <div class="project-header">
+                        <i class="fas fa-home project-icon"></i>
+                        <h3>Domotique</h3>
+                    </div>
+                    <ul class="project-list">
+                        <li>Mise en place de capteurs</li>
+                        <li>Automatismes</li>
+                        <li>Supervision et intégration matériel / logiciel</li>
+                    </ul>
+                </div>
+
+                <!-- Impression 3D -->
+                <div class="project-card glass-card reveal">
+                    <div class="project-header">
+                        <i class="fas fa-cube project-icon"></i>
+                        <h3>Impression 3D</h3>
+                    </div>
+                    <ul class="project-list">
+                        <li>Utilisation et maintenance de plusieurs imprimantes</li>
+                        <li>Réglages, calibrations et dépannage</li>
+                        <li>Compréhension mécanique, électronique et logicielle des machines</li>
+                    </ul>
+                </div>
+
+                <!-- Projets techniques -->
+                <div class="project-card glass-card reveal">
+                    <div class="project-header">
+                        <i class="fas fa-cogs project-icon"></i>
+                        <h3>Projets techniques personnels</h3>
+                    </div>
+                    <ul class="project-list">
+                        <li>Projets mêlant informatique, électronique, automatisation et systèmes</li>
+                        <li>Développement de scripts et outils pour automatiser et optimiser les usages</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="highlight-box glass-card reveal">
+                <i class="fas fa-lightbulb"></i>
+                <p>
+                    Ces projets personnels témoignent de mon <strong>autonomie technique</strong>, 
+                    de ma <strong>capacité d'analyse</strong> et de mon <strong>intérêt constant</strong> 
+                    pour les environnements matériels et multimédias.
+                </p>
+            </div>
+        </section>
+
+        <!-- Section Savoir-être -->
+        <section id="savoir-etre" class="section">
+            <h2 class="section-title reveal">Savoir-être Professionnel</h2>
+            
+            <div class="qualities-grid">
+                <div class="quality-item glass-card reveal">
+                    <i class="fas fa-check-circle quality-icon"></i>
+                    <span>Rigueur et méthode</span>
+                </div>
+                <div class="quality-item glass-card reveal">
+                    <i class="fas fa-user-check quality-icon"></i>
+                    <span>Autonomie rapide sur le terrain</span>
+                </div>
+                <div class="quality-item glass-card reveal">
+                    <i class="fas fa-users quality-icon"></i>
+                    <span>Capacité à travailler seul ou en équipe</span>
+                </div>
+                <div class="quality-item glass-card reveal">
+                    <i class="fas fa-handshake quality-icon"></i>
+                    <span>Bon relationnel sur site client</span>
+                </div>
+                <div class="quality-item glass-card reveal">
+                    <i class="fas fa-shield-alt quality-icon"></i>
+                    <span>Respect strict des procédures et des consignes de sécurité</span>
+                </div>
+                <div class="quality-item glass-card reveal">
+                    <i class="fas fa-medal quality-icon"></i>
+                    <span>Fiabilité et constance dans la durée</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Conclusion -->
+        <section id="contact" class="section">
+            <div class="conclusion-box glass-card reveal">
+                <h2 class="conclusion-title">
+                    <i class="fas fa-star"></i>
+                    Conclusion
+                </h2>
+                <p>
+                    Mon parcours combine <strong>électricité</strong>, <strong>maintenance</strong>, 
+                    <strong>multimédia</strong> et <strong>informatique</strong>, avec une approche globale des installations.
+                </p>
+                <p>
+                    Je suis en mesure d'intervenir efficacement sur des missions d'installation et de maintenance 
+                    de matériel multimédia, avec une compréhension complète des aspects <strong>câblage</strong>, 
+                    <strong>équipements</strong>, <strong>réseau</strong> et <strong>usage final</strong>.
+                </p>
+                <p class="conclusion-final">
+                    Je reste bien entendu disponible pour tout complément d'information.
+                </p>
+                <div class="signature">
+                    <p>Cordialement,</p>
+                    <p class="signature-name gradient-text">Quentin Faber</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Quentin Faber - Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <!-- Bouton retour en haut -->
+    <button id="backToTop" class="back-to-top" title="Retour en haut">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="main.js"></script>
+</body>
+</html>
