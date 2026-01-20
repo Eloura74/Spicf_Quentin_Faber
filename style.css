@@ -95,6 +95,7 @@ body {
     width: 100%;
     max-width: 100vw;
     position: relative;
+    touch-action: pan-y pinch-zoom;  /* Force le scroll vertical et le zoom sur mobile */
 }
 
 /* ============================================
@@ -178,6 +179,8 @@ body {
     opacity: 0;
     transform: translateY(30px) scale(0.98);
     transition: all 0.6s var(--transition-premium);
+    touch-action: pan-y;  /* Force le scroll vertical sur mobile */
+    pointer-events: auto;
 }
 
 .reveal.revealed {
@@ -387,6 +390,7 @@ table {
 .section {
     margin-bottom: 8rem;
     width: 100%;
+    touch-action: pan-y;  /* Force le scroll vertical sur Android */
 }
 
 .section-title {
@@ -669,6 +673,7 @@ table {
     margin-top: 2rem;
     width: 100%;
     max-width: 100%;
+    touch-action: pan-y;  /* Force le scroll vertical sur Android */
 }
 
 .formation-card {
@@ -792,6 +797,7 @@ table {
     margin-top: 3rem;
     width: 100%;
     max-width: 100%;
+    touch-action: pan-y;  /* Force le scroll vertical sur Android */
 }
 
 .skill-card {
@@ -866,6 +872,7 @@ table {
     margin-bottom: 3rem;
     width: 100%;
     max-width: 100%;
+    touch-action: pan-y;  /* Force le scroll vertical sur Android */
 }
 
 .project-card {
