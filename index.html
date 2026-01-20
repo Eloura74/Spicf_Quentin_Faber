@@ -2,7 +2,9 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <title>Quentin Faber - Installateur Matériel Multimédia</title>
     
     <!-- Fonts -->
@@ -29,7 +31,10 @@
     <header class="header">
         <div class="container-header">
             <h1 class="logo">Quentin Faber</h1>
-            
+            <div class="contact-info">
+                <p onclick="copyToClipboard('07 68 83 30 98')">07 68 83 30 98</p>
+                <p onclick="copyToClipboard('faber.quentin@gmail.com')">faber.quentin@gmail.com</p>
+            </div>
             <!-- Bouton hamburger pour mobile -->
             <button class="hamburger" id="hamburger" aria-label="Menu de navigation">
                 <span class="hamburger-line"></span>
@@ -62,7 +67,7 @@
                     Quentin <span class="gradient-text">Faber</span>
                 </h2>
                 <p class="hero-subtitle">
-                    Professionnel de l'électricité et du multimédia avec une expertise complète en installation, maintenance et dépannage
+                    Professionnel de l'électricité et du numérique avec une expertise complète en installation, maintenance et dépannage
                 </p>
                 <div class="hero-intro glass-card">
                     <p>
@@ -369,6 +374,14 @@
                     <p>Cordialement,</p>
                     <p class="signature-name gradient-text">Quentin Faber</p>
                 </div>
+                <div class="coordonees">
+                    <p>Quentin Faber</p>
+                    <p>125 ronde des bolles</p>
+                    <p>13800 Istres</p>
+                    <!-- coordonée copiable dans le presse papier -->
+                    <p onclick="copyToClipboard('07 68 83 30 98')">07 68 83 30 98</p>
+                    <p onclick="copyToClipboard('faber.quentin@gmail.com')">faber.quentin@gmail.com</p>
+                </div>
             </div>
         </section>
 
@@ -377,7 +390,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
-            <p>&copy; 2025 Quentin Faber - Tous droits réservés</p>
+            <p>&copy; 2026 Quentin Faber - Tous droits réservés</p>
         </div>
     </footer>
 
