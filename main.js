@@ -383,18 +383,18 @@ function showCopyNotification(text) {
         document.body.appendChild(notification);
     }
     
-    // Définir le texte de la notification
-    notification.textContent = `✓ Copié : ${text}`;
+    // Définir le texte de la notification (sans le préfixe ✓ car il est dans le CSS)
+    notification.textContent = `Copié : ${text}`;
     
     // Afficher la notification
     setTimeout(() => {
         notification.classList.add('show');
     }, 10);
     
-    // Masquer la notification après 3 secondes
+    // Masquer la notification après 2.5 secondes
     setTimeout(() => {
         notification.classList.remove('show');
-    }, 3000);
+    }, 2500);
 }
 
 // Initialiser la fonction de copie sur tous les éléments .copyable
