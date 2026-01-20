@@ -667,10 +667,16 @@ table {
     grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
     gap: 2rem;
     margin-top: 2rem;
+    width: 100%;
+    max-width: 100%;
 }
 
 .formation-card {
     padding: 2.5rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    min-width: 0;
 }
 
 .formation-header {
@@ -785,6 +791,7 @@ table {
     gap: 2rem;
     margin-top: 3rem;
     width: 100%;
+    max-width: 100%;
 }
 
 .skill-card {
@@ -793,6 +800,7 @@ table {
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
+    min-width: 0;
 }
 
 .skill-icon {
@@ -856,10 +864,16 @@ table {
     grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
     gap: 2rem;
     margin-bottom: 3rem;
+    width: 100%;
+    max-width: 100%;
 }
 
 .project-card {
     padding: 2rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    min-width: 0;
 }
 
 .project-header {
@@ -879,10 +893,15 @@ table {
     font-size: 1.3rem;
     font-weight: 700;
     color: var(--text-primary);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
 }
 
 .project-list {
     list-style: none;
+    width: 100%;
+    max-width: 100%;
 }
 
 .project-list li {
@@ -890,6 +909,9 @@ table {
     padding: 0.5rem 0;
     padding-left: 1.5rem;
     position: relative;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
 }
 
 .project-list li::before {
@@ -1549,6 +1571,7 @@ table {
         grid-template-columns: 1fr;
         gap: 1rem;
         width: 100%;
+        max-width: 100%;
         padding: 0;
     }
     
@@ -1557,6 +1580,7 @@ table {
         width: 100%;
         max-width: 100%;
         box-sizing: border-box;
+        min-width: 0;
     }
     
     .skill-icon {
@@ -1596,11 +1620,15 @@ table {
         grid-template-columns: 1fr;
         gap: 1rem;
         width: 100%;
+        max-width: 100%;
     }
     
     .project-card {
         padding: 1rem;
         width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        min-width: 0;
     }
     
     .project-header {
